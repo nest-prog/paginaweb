@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Responsive logo in section ubicacion */
+    .container h2 img {
+      width: 120px;
+      height: 120px;
+      max-width: 40vw;
+      max-height: 40vw;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .container h2 img {
+        width: 80px;
+        height: 80px;
+        max-width: 60vw;
+        max-height: 60vw;
+      }
+      .logo {
+        width: 80px !important;
+        height: 80px !important;
+      }
+    }
+    /* Responsive nav */
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    @media (max-width: 600px) {
+      .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+    /* Responsive container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* Responsive main */
+    main {
+      padding: 2rem 1rem;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem 0.5rem;
+      }
+    }
+    /* Centrado y texto claro para el eslogan */
+    .slogan {
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 2px 8px #0008;
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem 0;
+    }
+    .footer-anuncios {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      margin-top: 2rem;
+    }
+    .anuncios-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .footer-anuncios ul {
+      list-style: disc inside;
+      text-align: left;
+      margin: 1em auto;
+      max-width: 500px;
+      padding: 0;
+    }
+    .footer-anuncios li {
+      margin-bottom: 0.5em;
+    }
+    @media (max-width: 600px) {
+      .anuncios-container { padding: 0 0.5rem; }
+      .footer-anuncios ul { max-width: 100%; }
+    }
+    /* Modal styles */
+    .modal-info {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-info.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      color: #222;
+      max-width: 400px;
+      width: 90vw;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #0005;
+      position: relative;
+      text-align: left;
+      animation: modalIn 0.2s;
+    }
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .close-modal:hover {
+      color: #d00;
+    }
+    @keyframes modalIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body style="background: url('fondo papa.webp') no-repeat center top; background-size: cover;">
+
+  <header class="header">
+    <div class="container">
+      <div class="logo" style="background: none; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; border-radius: 50%; overflow: hidden;">
+        <span style="position: absolute; background: rgba(255,255,255,0.7); padding: 0.5em 1em; border-radius: 10px;">Harina de Papa</span>
+      </div>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#" id="info-link">Información</a></li>
+          <li><a href="#redes">Redes</a></li>
+          <li><a href="#contacto">Contactanos</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section id="ubicacion" class="ubicacion">
+    <div class="container">
+      <h2><img src="imagen1.png" alt="Logo Harina Andina" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;" /></h2>
+      <p>Harina de Papa Andina: Natural, versátil y sin gluten.
+
+Ideal para repostería, sopas, panes, tortillas y más. Nos encontramos en:</p>
+      <ul class="supermercados">
+        <li>🛒 Hipermaxi</li>
+        <li>🏬 IC Norte</li>
+        <li>🧺 Supermercado América</li>
+      </ul>
+    </div>
+  </section>
+
+  <main style="padding: 2rem;">
+    <h1 class="slogan">Naturalmente deliciosa.</h1>
+    <p>.</p>
+  </main>
+
+  <footer class="footer-anuncios">
+    <div class="anuncios-container">
+      <h3>¿Qué puedes hacer con Harina de Papa?</h3>
+      <ul>
+        <li><strong>Pan sin gluten:</strong> Prepara pan suave y delicioso, ideal para personas celíacas.</li>
+        <li><strong>Tortillas y arepas:</strong> Da un toque especial y esponjoso a tus recetas tradicionales.</li>
+        <li><strong>Repostería:</strong> Bizcochos, galletas y pasteles más ligeros y saludables.</li>
+        <li><strong>Sopas y salsas:</strong> Espesa de forma natural y sin sabor artificial.</li>
+        <li><strong>Recetas creativas:</strong> ¡Experimenta y comparte tus resultados!</li>
+      </ul>
+      <p style="margin-top:1em; font-style:italic; color:#fff; text-shadow:0 1px 4px #0008;">¿Tienes una receta o relato? ¡Compártelo con nosotros!</p>
+    </div>
+  </footer>
+
+  <!-- Modal de información -->
+  <div id="modal-info" class="modal-info">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2>Elaboración de la Harina de Papa</h2>
+      <p>
+        La harina de papa se elabora a partir de papas seleccionadas, que se lavan, pelan y cocinan al vapor. Luego se prensan para extraer el exceso de agua, se secan cuidadosamente y se muelen hasta obtener un polvo fino. Este proceso conserva los nutrientes y el sabor natural de la papa, resultando en una harina versátil, sin gluten y perfecta para múltiples recetas.
+      </p>
+      <ul>
+        <li>Selección y lavado de papas frescas.</li>
+        <li>Pelado y cocción al vapor.</li>
+        <li>Prensado y secado.</li>
+        <li>Molienda fina.</li>
+        <li>Envasado para mantener la frescura.</li>
+      </ul>
+      <p style="font-style:italic;">Ideal para quienes buscan alternativas saludables y naturales.</p>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Modal de información
+    const infoLink = document.getElementById('info-link');
+    const modalInfo = document.getElementById('modal-info');
+    const closeModal = document.getElementById('close-modal');
+    infoLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalInfo.classList.add('active');
+    });
+    closeModal.addEventListener('click', function() {
+      modalInfo.classList.remove('active');
+    });
+    window.addEventListener('click', function(e) {
+      if (e.target === modalInfo) {
+        modalInfo.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
